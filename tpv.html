@@ -1,0 +1,227 @@
+<html>
+  <head> 
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Pasarela de Pago</title>
+      <!-- Bootstrap CSS -->
+      <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+  <body>
+    <div class="container">
+      <div class="row justify-content-center">
+        <aside class="col-sm-6">
+          <div class="card" style="background: #f6f6f6; margin-top:13%;">
+            <div class="card-body p-5">
+                <img class="logo-light " style="width:150px; margin-left:30%; margin-bottom:20px;" src="https://pointickets.com/images/logo/logo_poin.png" alt="pointickets Logo">
+              <form
+                role="form"
+                id="paycometPaymentForm"
+                action="javascript:customFunction();"
+                method="POST"
+              >
+                <input type="hidden" name="amount" value="1234" />
+                <input
+                  type="hidden"
+                  data-paycomet="jetID"
+                  value="MOjURkhgnIzm3fG8t6A5rwWxT4ZP9SLH"
+                />
+                <div class="form-group">
+                  <label for="username">Títular de la tarjeta</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"
+                        ><i class="fa fa-user"></i
+                      ></span>
+                    </div>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="username"
+                      data-paycomet="cardHolderName"
+                      placeholder=""
+                      required=""
+                    />
+                  </div>
+                  <!-- input-group.// -->
+                </div>
+                <!-- form-group.// -->
+
+                <div class="form-group">
+                  <label for="cardNumber">Número de la tarjeta</label>
+                  <div class="input-group-">
+                    <div class="input-group-prepend-">
+                      <span class="input-group-text-"
+                        ><i class="fa fa-credit-card"></i
+                      ></span>
+                    </div>
+                    <div
+                      id="paycomet-pan"
+                      style="padding: 0px; height: 36px"
+                    ></div>
+                    <input
+                      paycomet-style="width: 65%; height: 25px; font-size:14px; padding-left:7px; padding-top:8px;"
+                      paycomet-name="pan"
+                      paycomet-placeholder="1234 4567..."
+                    />
+                  </div>
+                  <!-- input-group.// -->
+                </div>
+                <!-- form-group.// -->
+
+                <div class="row">
+                  <div class="col-sm-8">
+                    <div class="form-group">
+                      <label><span class="hidden-xs">Fecha de vencimiento</span> </label>
+                      <div class="form-inline">
+                        <select
+                          class="form-control"
+                          style="width: 45%"
+                          data-paycomet="dateMonth"
+                        >
+                          <option>Mes</option>
+                          <option value="01">01 - Enero</option>
+                          <option value="02">02 - Febrero</option>
+                          <option value="03">03 - Marzo</option>
+                          <option value="04">04 - Abril</option>
+                          <option value="05">05 - Mayo</option>
+                          <option value="06">06 - Junio</option>
+                          <option value="07">07 - Julio</option>
+                          <option value="08">08 - Agosto</option>
+                          <option value="09">09 - Septiembre</option>
+                          <option value="10">10 - Octubre</option>
+                          <option value="11">11 - Noviembre</option>
+                          <option value="12">12 - Diciembre</option>
+                        </select>
+                        <span style="width: 10%; text-align: center"> / </span>
+                        <select
+                          class="form-control"
+                          style="width: 45%"
+                          data-paycomet="dateYear"
+                        >
+                          <option>Año</option>
+                          <option value="20">2020</option>
+                          <option value="21">2021</option>
+                          <option value="22">2022</option>
+                          <option value="23">2023</option>
+                          <option value="24">2024</option>
+                          <option value="25">2025</option>
+                          <option value="26">2026</option>
+                          <option value="27">2027</option>
+                          <option value="28">2028</option>
+                          <option value="29">2029</option>
+                          <option value="30">2030</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-sm-4">
+                    <div class="form-group">
+                      <label
+                        data-toggle="tooltip"
+                        title=""
+                        data-original-title="3 digitos detras de la tarjeta"
+                        >CVV <i class="fa fa-question-circle"></i
+                      ></label>
+                      <div
+                        id="paycomet-cvc2"
+                        style="height: 36px; padding: 0px"
+                      ></div>
+                      <input
+                        paycomet-name="cvc2"
+                        paycomet-style="border:0px; width: 100%; height: 25px; font-size:12px; padding-left:7px; padding-tap:8px;"
+                        paycomet-placeholder="CVV2"
+                        required=""
+                        type="text"
+                      />
+                    </div>
+                    <!-- form-group.// -->
+                  </div>
+                </div>
+                <!-- row.// -->
+                <button
+                  class="subscribe btn btn-primary btn-block"
+                  type="submit"
+                >
+                  PAGAR AHORA
+                </button>
+              </form>
+              <div class="row justify-content-center">
+                    <br>
+                    <p class="text-center" style="font-size: 11px;">
+                        Tu pago es 100% seguro<br>
+                        Tus transacciones están seguras gracias a nuestro sistema de pago 3D Secure.
+                        Esto
+                        quiere decir que cuando hayas pagado, la entidad de tu tarjeta bancaria te
+                        pedirá un
+                        código que llega por SMS en el que validarán que estas comprando
+                        correctamente.<br>
+                        Además usamos tecnología de seguridad SSL para proteger todos tus datos
+                        personales.
+                    </p>
+                    <div class="col-sm-4">
+                        <img src="./mastercard.png">
+
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="./visa.png">
+                    </div>
+                    <div class="col-sm-4">
+                        <img src="./american.png">
+                    </div>
+                </div>
+              <div id="paymentErrorMsg"></div>
+            </div>
+            <!-- card-body.// -->
+          </div>
+          <!-- card.// -->
+        </aside>
+      </div>
+    </div>
+    <script src="https://api.paycomet.com/gateway/paycomet.jetiframe.js?lang=es"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+    function getParameterByName(name) {
+        name = name.replace(/[\\[]/, "\\\\[").replace(/[\\]]/, "\\\\]");
+        var regex = new RegExp("[\\\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+        return results === null ? "" : decodeURIComponent(results[1].replace(/\\+/g, " "));
+    }
+
+// Ejemplo de uso:
+      async function customFunction() {
+        const price = parseFloat(getParameterByName('price'));
+
+        myForm = document.getElementById("paycometPaymentForm");
+        console.log(myForm.paytpvToken.value);
+        
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+        myHeaders.append("Accept", "application/json");
+        var raw = JSON.stringify({
+          terminal: 68638,
+          jetToken: myForm.paytpvToken.value,
+          amount: price
+        });
+
+        var requestOptions = {
+          method: "POST",
+          headers: myHeaders,
+          body: raw,
+        };
+
+        fetch('https://admin.pointickets.com/api/categories/payment', requestOptions)
+          .then((response) => response.json())
+          .then((result) => {
+            console.log(result)
+            window.location.href = result.challengeUrl
+          })
+          .catch((error) => console.log("error", error));
+      }
+    </script>
+  </body>
+</html>
