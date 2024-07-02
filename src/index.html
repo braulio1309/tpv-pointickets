@@ -20,11 +20,11 @@
                 action="javascript:customFunction();"
                 method="POST"
               >
-                <input type="hidden" name="amount" value="1234" />
+                <input type="hidden" name="amount" value="1" />
                 <input
                   type="hidden"
                   data-paycomet="jetID"
-                  value="MOjURkhgnIzm3fG8t6A5rwWxT4ZP9SLH"
+                  value="wQbcFD4uRBWn0xY2kmrAiyUoMKLIHagV"
                 />
                 <div class="form-group">
                   <label for="username">Títular de la tarjeta</label>
@@ -203,9 +203,9 @@
         myHeaders.append("Content-Type", "application/json");
         myHeaders.append("Accept", "application/json");
         var raw = JSON.stringify({
-          terminal: 68638,
+          terminal: 68637,
           jetToken: myForm.paytpvToken.value,
-          amount: price
+          amount: 1//price
         });
 
         var requestOptions = {
