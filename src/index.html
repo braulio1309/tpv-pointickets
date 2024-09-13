@@ -217,8 +217,11 @@
         fetch('https://admin.pointickets.com/api/categories/payment', requestOptions)
           .then((response) => response.json())
           .then((result) => {
-            console.log(result)
-            window.location.href = result.challengeUrl
+            if(result?.challengeUrl){
+              window.location.href = result.challengeUrl
+            } else {
+              window.location.href = `https://pointickets.com/exitoso?r=${result.order}`
+            }
           })
           .catch((error) => console.log("error", error));
       }
